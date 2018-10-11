@@ -63,7 +63,7 @@ switch (process.argv[2]){
                     }
                 }
                 else {
-                    console.log('No search result for ' + input2)
+                    console.log('No search result for Artist/band: ' + input2)
                 }
             }
         });     
@@ -92,15 +92,21 @@ switch (process.argv[2]){
             console.log(error)
             }
             else{
-                console.log("Title of the movie: " + JSON.parse(body).Title)
-                console.log("Year: " + JSON.parse(body).Year)
-                console.log("IMDB Rating: " + JSON.parse(body).imdbRating)
-                console.log("Rotten Tomatoes Rating: " + JSON.parse(body).Ratings[1].Value)
-                console.log("Country produced: " + JSON.parse(body).imdbRating )
-                console.log("Language: " + JSON.parse(body).Language)
-                console.log("Plot: " + JSON.parse(body).Country)
-                console.log("Actors: " + JSON.parse(body).Actors)
-                console.log("-------------------------------------\n")
+                if ( (JSON.parse(body).length) > 0 ) {  
+                    console.log("\n");
+                    console.log("Title of the movie: " + JSON.parse(body).Title)
+                    console.log("Year: " + JSON.parse(body).Year)
+                    console.log("IMDB Rating: " + JSON.parse(body).imdbRating)
+                    console.log("Rotten Tomatoes Rating: " + JSON.parse(body).Ratings[1].Value)
+                    console.log("Country produced: " + JSON.parse(body).Country )
+                    console.log("Language: " + JSON.parse(body).Language)
+                    console.log("Plot: " + JSON.parse(body).Plot)
+                    console.log("Actors: " + JSON.parse(body).Actors)
+                    console.log("-------------------------------------\n")
+                }
+                else {
+                    console.log('No search result for movie: ' + input2)
+                }
             }
         });     
     break
