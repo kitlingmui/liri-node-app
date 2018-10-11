@@ -15,6 +15,11 @@ API we use
 Other Package   
    * [Moment](https://www.npmjs.com/package/moment)
    * [DotEnv](https://www.npmjs.com/package/dotenv)
+
+NPM installation Command
+
+   *  npm install dotenv
+   *  npm install request
    
 ### Command Should Do
 1. `node liri.js concert-this <artist/band name here>`

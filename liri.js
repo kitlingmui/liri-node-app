@@ -3,9 +3,9 @@
 require("dotenv").config();
 
 // Soptify set up To be update
-var Spotify = require('node-spotify-api');
-var keys = require("./keys.js")
-var spotify = new Spotify(keys.spotify)
+// var Spotify = require('node-spotify-api');
+// var keys = require("./keys.js")
+// var spotify = new Spotify(keys.spotify)
 //console.log(spotify)
 
 // Load the fs package to read and write
@@ -51,9 +51,10 @@ switch (process.argv[2]){
             console.log(error)
             }
             else{
-                if ( (JSON.parse(body).length) > 1 ) {
-                    // display the first 10 of return result
-                    for (let i = 0; i<10; i++){
+                if ( (JSON.parse(body).length) > 0 ) {                   
+                    console.log("\n");
+                    for (let i = 0; i < (JSON.parse(body).length); i++){
+                        console.log("Search Result " + (i+1));
                         console.log("Artist/band name: " + input2)
                         console.log("Name of the venue: " + JSON.parse(body)[i].venue.name)
                         console.log("Venue location: " + JSON.parse(body)[i].venue.city + ', ' + JSON.parse(body)[i].venue.country)                
